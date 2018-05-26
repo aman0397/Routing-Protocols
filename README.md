@@ -14,3 +14,7 @@
 1. Compute the shortest path to every other router.
 
 > The primary implementation of the link state routing is based on the Dijkstra's algorithm. In the implementation, the libgraph library has been used to illustrate the exchange of packets across nodes in a network.  
+
+## Distance Vector Routing
+> Distance Vector protocol is a dynamic routing algorithm which operates by having each router maintain a table (vector) giving the best known distance to each destination and which link to use to get there. These tables are updated by exchanging information with their neighbors. Eventually, each router knows the best link to each destination. 
+> The costs usually notify delays in a network and since the delays are non-negative, the natural choice of algorihtm is the Dijkstra's algorithm. However, Dijkstra's shortest-path computation requires global knowledge of the network: it needs to maitain a set S of nodes for which shortest paths have been determined and make a global decision about which node to add next to S. It is often cleaner and more flexible to use algorithms that require only local knowledge of neighboring nodes. The Bellman Ford algorithm is therefore used to achieve our goals. The Distance Vector Protocol implementation therefore uses the Bellman Ford algorithm.
